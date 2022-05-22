@@ -9,7 +9,7 @@ exports.getHero = (response) => {
         if (error) return console.log('error: ', error)
             //response data
         const heroes = {
-            title: "MOBILE-LEGEND-HERO-LIST",
+            title: "MOBILE LEGEND HERO LIST",
             data: JSON.parse(JSON.stringify(result))
         }
         response.render('index', { heroes })
@@ -37,12 +37,12 @@ exports.updateHeroById = (data, response) => {
     const role = data.role
     const skills = data.skills
 
-    const sql = `UPDATE hero SET name = '${name}', role = '${role}',  skills = '${skills}' WHERE id = '${id}'`
+    const sql = `UPDATE hero SET name = '${name}', role = '${role}',  skills = '${skills} 'WHERE id = '${id}'`
 
     db.query(sql, (error, result) => {
         if (error) return console.log('error', error)
-        response.redirect('/hero')
-        response.end()
+        // response.redirect('/hero')
+        // response.end()
     })
 
 }
@@ -55,8 +55,8 @@ exports.addHero = (data, response) => {
 
     db.query(sql, (error, result) => {
         if (error) return console.log('error', error)
-        response.redirect('/hero')
-        response.end()
+        // response.redirect('/hero')
+        // response.end()
     })
 
 }
@@ -66,8 +66,8 @@ exports.removeHero = (id, response) => {
 
     db.query(sql, (error, result) => {
         if (error) return console.log('error', error)
-        response.redirect('/hero')
-        response.end()
+        // response.redirect('/hero')
+        // response.end()
     })
 
 }

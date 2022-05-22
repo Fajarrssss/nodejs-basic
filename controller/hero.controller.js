@@ -7,8 +7,13 @@ router.get('/', (request, response) => {
     Hero.getHero(response);
 })
 
+router.get('/create/', (request, response) => {
+    response.render('heroDetail', { hero: null })
+    response.end()
+})
+
 //get hero by id
-router.get('/:id', (request, response) => {
+router.get('/update/:id', (request, response) => {
     const id = request.params.id
     Hero.getHeroById(id, response)
 })
